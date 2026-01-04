@@ -1,1 +1,149 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maya Digital Assets - Landing Page with Buy Button</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #6B46C1 0%, #9F7AEA 50%, #D4AF37 100%);
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .landing-container {
+            position: relative;
+            max-width: 900px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .landing-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .floating-buy-button {
+            position: absolute;
+            bottom: 50px;
+            right: -80px;
+            background: linear-gradient(135deg, #D4AF37 0%, #B8860B 50%, #9F7AEA 100%);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 20px 40px;
+            font-size: 1.5em;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            z-index: 1000;
+            animation: pulse 2s infinite;
+        }
+
+        .floating-buy-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+            background: linear-gradient(135deg, #FFD700 0%, #D4AF37 50%, #8B5CF6 100%);
+        }
+
+        .floating-buy-button:active {
+            transform: translateY(-2px) scale(1.02);
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            }
+            50% {
+                box-shadow: 0 8px 20px rgba(212, 175, 55, 0.6);
+            }
+            100% {
+                box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            }
+        }
+
+        .arrow-connector {
+            position: absolute;
+            bottom: 70px;
+            right: -40px;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #D4AF37 0%, #B8860B 100%);
+            z-index: 999;
+            border-radius: 2px;
+        }
+
+        .arrow-connector::after {
+            content: '';
+            position: absolute;
+            right: -8px;
+            top: -4px;
+            width: 0;
+            height: 0;
+            border-left: 10px solid #B8860B;
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+        }
+
+        .buy-callout-text {
+            position: absolute;
+            bottom: 110px;
+            right: -120px;
+            color: white;
+            font-size: 1.1em;
+            font-weight: 600;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            white-space: nowrap;
+        }
+
+        @media (max-width: 768px) {
+            .floating-buy-button {
+                position: static;
+                margin: 20px auto;
+                display: block;
+                right: auto;
+                bottom: auto;
+            }
+            
+            .arrow-connector,
+            .buy-callout-text {
+                display: none;
+            }
+            
+            .landing-container {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .floating-buy-button {
+                padding: 15px 30px;
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="landing-container">
+        <img src="your-landing-page-image.png" alt="Maya Digital Assets Income Tracker" class="landing-image">
+        <div class="arrow-connector"></div>
+        <div class="buy-callout-text">Get This App!</div>
+        <a href="https://nofilm5.gumroad.com/l/eyqepa" class="floating-buy-button" target="_blank">
+            BUY NOW<br>
+            <span style="font-size: 0.8em; font-weight: 400;">$127</span>
+        </a>
+    </div>
+</body>
+</html>
